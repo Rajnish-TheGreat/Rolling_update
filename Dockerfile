@@ -5,6 +5,6 @@ RUN yum install vim -y
 RUN yum install /sbin/service -y
 RUN yum install httpd -y
 COPY index.html /var/www/html/
-CMD sudo service httpd start -DFOREGROUND && /bin/bash
+CMD /usr/sbin/httpd -DFOREGROUND && /bin/bash
 COPY ./index.html /var/www/html/
 Expose 80
